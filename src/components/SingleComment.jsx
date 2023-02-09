@@ -5,7 +5,13 @@ class SingleComment extends Component {
   state = {};
 
   render() {
-    return <ListGroup.Item>{this.props.comment.comment}</ListGroup.Item>;
+    return (
+      <ListGroup.Item>
+        <p>{this.props.comment.author}</p>
+        <p> {this.props.comment.comment}</p>
+        {/* <p> {this.props.comment.updatedAt}</p> */}
+      </ListGroup.Item>
+    );
   }
 }
 
