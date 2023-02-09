@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Card } from "react-bootstrap";
 import CommentsList from "./CommentsList";
+import AddComment from "./AddComment";
 
 class CommentArea extends Component {
   state = {
@@ -32,9 +33,13 @@ class CommentArea extends Component {
     return (
       <>
         <Card.Header className="p-0">COMMENTI</Card.Header>
-        <Card style={{ width: "17rem" }}>
-          <CommentsList comments={this.state.comments} />
-          {/* <AddComment /> */}
+        <Card>
+          {this.state.comments.length > 0 ? (
+            <CommentsList comments={this.state.comments} />
+          ) : (
+            <p>Ancora nessun commento</p>
+          )}
+          <AddComment />
         </Card>
       </>
     );

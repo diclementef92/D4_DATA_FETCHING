@@ -37,8 +37,8 @@ class BookList extends Component {
                   .toLowerCase()
                   .includes(this.state.textToSearch.toLowerCase())
               )
-              .map((elem) => {
-                return <SingleBook book={elem} key={`book-${elem.asin}`} />;
+              .map((b) => {
+                return <SingleBook book={b} key={`book-${b.asin}`} />;
               })}
           </Col>
         </Row>
